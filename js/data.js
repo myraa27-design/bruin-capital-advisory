@@ -11,7 +11,7 @@ window.BCA_CONTACT = {
 };
 
 // Sectors used as filter tabs on the Reports page.
-window.BCA_SECTORS = ["Quant", "Investment Banking", "Wealth Management", "Newsletter", "Stock Pitch"];
+window.BCA_SECTORS = ["Healthcare", "TMT", "Wealth Management"];
 
 // Reports / newsletters. Newest first. The first three also appear in the
 // homepage carousel. `url` can point to a PDF in /reports or a Google Doc.
@@ -19,10 +19,23 @@ window.BCA_SECTORS = ["Quant", "Investment Banking", "Wealth Management", "Newsl
 window.BCA_REPORTS = [
   // {
   //   title: "Example: Why mid-market private credit keeps growing",
-  //   sector: "Newsletter",
+  //   sector: "Healthcare", // must match one of BCA_SECTORS above
   //   date: "2026-10-01",
   //   summary: "One-paragraph teaser shown on the card.",
   //   url: "reports/example.pdf",
+  // },
+];
+
+// Projects shown on the Projects page. Newest first. `url` is optional (a PDF,
+// deck, or Google Doc). Leave the array empty to show a "coming soon" message.
+window.BCA_PROJECTS = [
+  // {
+  //   title: "Example: LBO model for a mid-market healthcare services company",
+  //   type: "Modeling",          // short label, e.g. Modeling, Stock Pitch, Competition
+  //   date: "2026-10-01",
+  //   summary: "One-paragraph description shown on the card.",
+  //   team: "First Last, First Last",
+  //   url: "projects/example.pdf",
   // },
 ];
 

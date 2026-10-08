@@ -39,6 +39,28 @@
     });
   }
 
+  /* ---- Header shadow once the page scrolls ---- */
+  const header = $(".site-header");
+  if (header) {
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 12);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Roaring logo: plays once on load, then on every click/tap ---- */
+  const roar = $(".roar");
+  if (roar) {
+    const play = () => {
+      if (reduceMotion || roar.classList.contains("is-roaring")) return;
+      roar.classList.add("is-roaring");
+      setTimeout(() => roar.classList.remove("is-roaring"), 1900);
+    };
+    roar.addEventListener("click", play);
+    window.addEventListener("load", () => setTimeout(play, 900));
+  }
+
   /* ---- Footer: year + contact links ---- */
   const year = $("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
@@ -66,7 +88,7 @@
             el("a", { class: "btn btn-light", href: r.url }, "View report")))
       : [el("article", { class: "slide" },
           el("p", { class: "tag" }, "Reports"),
-          el("h3", {}, "Our first member reports and newsletters are on the way."),
+          el("h3", {}, "Our first member reports are on the way."),
           el("a", { class: "btn btn-light", href: "reports.html" }, "Visit reports"))];
     slidesEl.replaceChildren(...slides);
 
@@ -96,26 +118,42 @@
   const list = $(".report-list");
   if (list) {
     const filters = $(".filters");
-    const sectors = ["All Posts", ...(window.BCA_SECTORS || [])];
-    const buttons = sectors.map((s, j) => el("button", { type: "button", "aria-pressed": String(j === 0) }, s));
+    const sectors = window.BCA_SECTORS || [];
+    const buttons = sectors.map((name, j) => el("button", { type: "button", "aria-pressed": String(j === 0) }, name));
     filters.replaceChildren(...buttons);
+    const empty = $(".empty");
 
     const render = (sector) => {
-      const shown = sector === "All Posts" ? reports : reports.filter((r) => r.sector === sector);
+      const shown = reports.filter((r) => r.sector === sector);
       list.replaceChildren(...shown.map((r) =>
         el("article", { class: "report-card" },
           el("p", { class: "tag" }, r.sector),
           el("h3", {}, el("a", { href: r.url }, r.title)),
           el("p", {}, r.summary),
           el("time", { datetime: r.date }, fmtDate(r.date)))));
-      $(".empty").hidden = shown.length > 0;
+      empty.textContent = `No ${sector} reports yet. Our first ones are on the way.`;
+      empty.hidden = shown.length > 0;
     };
     buttons.forEach((b) =>
       b.addEventListener("click", () => {
         buttons.forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
         render(b.textContent);
       }));
-    render("All Posts");
+    if (sectors.length) render(sectors[0]);
+  }
+
+  /* ---- Projects page ---- */
+  const projectList = $(".project-list");
+  if (projectList) {
+    const projects = window.BCA_PROJECTS || [];
+    projectList.replaceChildren(...projects.map((p) =>
+      el("article", { class: "report-card" },
+        p.type && el("p", { class: "tag" }, p.type),
+        el("h3", {}, p.url ? el("a", { href: p.url }, p.title) : p.title),
+        el("p", {}, p.summary),
+        p.team && el("p", { class: "team" }, p.team),
+        p.date && el("time", { datetime: p.date }, fmtDate(p.date)))));
+    $(".empty").hidden = projects.length > 0;
   }
 
   /* ---- Team page ---- */
@@ -134,5 +172,24 @@
         el("p", {}, m.role),
         m.linkedin && el("a", { href: m.linkedin, rel: "noopener", target: "_blank" }, "LinkedIn"))));
     $(".empty").hidden = members.length > 0;
+  }
+
+  /* ---- Scroll reveal ---- */
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const targets = document.querySelectorAll(
+      ".carousel, .about .section-title, .about-row, .step, .split > div, .member, .report-card, .filters, .empty:not([hidden]), .legal > *");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    targets.forEach((t, j) => {
+      const sibs = t.parentElement ? [...t.parentElement.children].indexOf(t) : 0;
+      t.style.setProperty("--d", Math.min(sibs, 5) * 0.07 + "s");
+      t.classList.add("reveal");
+      io.observe(t);
+    });
   }
 })();

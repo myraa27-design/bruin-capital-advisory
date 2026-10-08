@@ -12,9 +12,7 @@
   <meta name="theme-color" content="#082c4c">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -30,6 +28,7 @@
       <nav class="nav" id="site-nav" aria-label="Main">
         <a href="index.html" aria-current="page">Home</a>
         <a href="reports.html">Reports</a>
+        <a href="projects.html">Projects</a>
         <a href="recruitment.html">Recruitment</a>
         <a href="team.html">Our Team</a>
       </nav>
@@ -38,12 +37,31 @@
 
   <main id="main">
     <section class="hero">
-      <svg class="hero-skyline" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#84b4fc"><rect x="0" y="272" width="75" height="128"/><rect x="81" y="286" width="43" height="114"/><rect x="130" y="256" width="98" height="144"/><rect x="234" y="203" width="89" height="197"/><rect x="329" y="202" width="45" height="198"/><rect x="380" y="33" width="62" height="367"/><rect x="408" y="-7" width="6" height="40"/><rect x="448" y="299" width="62" height="101"/><rect x="516" y="203" width="71" height="197"/><rect x="593" y="264" width="73" height="136"/><rect x="672" y="286" width="81" height="114"/><rect x="759" y="53" width="41" height="347"/><rect x="806" y="88" width="93" height="312"/><rect x="849" y="48" width="6" height="40"/><rect x="905" y="160" width="57" height="240"/><rect x="968" y="93" width="101" height="307"/><rect x="1015" y="53" width="6" height="40"/><rect x="1075" y="49" width="43" height="351"/><rect x="1093" y="9" width="6" height="40"/><rect x="1124" y="55" width="77" height="345"/><rect x="1159" y="15" width="6" height="40"/><rect x="1207" y="93" width="43" height="307"/><rect x="1256" y="157" width="92" height="243"/><rect x="1354" y="165" width="94" height="235"/><rect x="1454" y="82" width="91" height="318"/><rect x="1496" y="42" width="6" height="40"/><rect x="1551" y="220" width="93" height="180"/></g></svg>
-      <div class="hero-content">
-        <h1>Bruin Capital Advisory</h1>
-        <p>An undergraduate finance organization dedicated to bringing attention to the lesser-known corners of finance.</p>
-        <a class="btn btn-light" href="recruitment.html">Join BCA</a>
+      <div class="hero-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>Bruin Capital Advisory</h1>
+          <p>An undergraduate finance organization dedicated to bringing attention to the lesser-known corners of finance.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="recruitment.html">Join BCA</a>
+            <a class="btn btn-dark" href="reports.html">Read our reports</a>
+          </div>
+        </div>
+        <div class="hero-mark">
+          <button class="roar" type="button" aria-label="Make the bear roar">
+            <span class="roar-rings" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="roar-logo">
+              <img class="roar-badge" src="assets/roar-badge.png" alt="" width="900" height="900">
+              <span class="roar-bear">
+                <img class="roar-head" src="assets/roar-head.png" alt="" width="900" height="900">
+                <img class="roar-jaw" src="assets/roar-jaw.png" alt="" width="900" height="900">
+              </span>
+            </span>
+          </button>
+          <p class="roar-hint" aria-hidden="true">Tap the bear</p>
+        </div>
       </div>
+      <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48c180 38 360 44 560 18s400-52 600-34 200 34 280 30v28H0z"/></svg>
     </section>
 
     <section class="carousel" aria-roledescription="carousel" aria-label="Latest reports">
@@ -54,30 +72,36 @@
     </section>
 
     <section class="about" aria-labelledby="about-title">
-      <div class="container">
-        <h2 class="section-title" id="about-title">About Us</h2>
-
-        <a class="boxed" href="team.html">Who We Are</a>
-        <p>Founded in 2026, Bruin Capital Advisory is an undergraduate finance organization dedicated to bringing
-          attention to the lesser-known corners of finance.</p>
-
-        <a class="boxed" href="reports.html">What We Do</a>
-        <p>We connect members to opportunities through our cross-university network and job postings board, and we
-          help them build a broad, practical skill set through weekly modeling projects across quant, investment
-          banking, and wealth management, internal stock pitches and competitions, and weekly newsletters covering
-          the sectors our members care about.</p>
-
-        <a class="boxed" href="recruitment.html">Why BCA?</a>
-        <p>At UCLA, the conversation around finance careers rarely extends beyond investment banking and consulting.
-          Students hear about the same two paths so often that many are funneled into them without ever learning
-          about the niche and emerging sectors that might suit them better.</p>
-        <p>Recruiting is also becoming less predictable every year. Students who cast a wider net, both in the skills
-          they build and the roles they pursue, are better positioned to succeed. BCA gives members the room to
-          explore, the resources to find roles that match their own criteria, and the accountability to stay on track
-          throughout the recruiting process.</p>
-
-        <a class="boxed" href="recruitment.html">How To Join</a>
-        <p>BCA welcomes students from all majors. Visit our recruitment page for the timeline and what we look for.</p>
+      <div class="container about-grid">
+        <h2 class="section-title" id="about-title">About us</h2>
+        <div class="about-rows">
+          <article class="about-row">
+            <h3><a href="team.html">Who we are</a></h3>
+            <p>Founded in 2026, Bruin Capital Advisory is an undergraduate finance organization dedicated to bringing
+              attention to the lesser-known corners of finance.</p>
+          </article>
+          <article class="about-row">
+            <h3><a href="reports.html">What we do</a></h3>
+            <p>We connect members to opportunities through our cross-university network and job postings board, and we
+              help them build a broad, practical skill set through weekly modeling projects across quant, investment
+              banking, and wealth management, internal stock pitches and competitions, and weekly newsletters covering
+              the sectors our members care about.</p>
+          </article>
+          <article class="about-row">
+            <h3><a href="recruitment.html">Why BCA?</a></h3>
+            <p>At UCLA, the conversation around finance careers rarely extends beyond investment banking and consulting.
+              Students hear about the same two paths so often that many are funneled into them without ever learning
+              about the niche and emerging sectors that might suit them better.</p>
+            <p>Recruiting is also becoming less predictable every year. Students who cast a wider net, both in the skills
+              they build and the roles they pursue, are better positioned to succeed. BCA gives members the room to
+              explore, the resources to find roles that match their own criteria, and the accountability to stay on track
+              throughout the recruiting process.</p>
+          </article>
+          <article class="about-row">
+            <h3><a href="recruitment.html">How to join</a></h3>
+            <p>BCA welcomes students from all majors. Visit our recruitment page for the timeline and what we look for.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>

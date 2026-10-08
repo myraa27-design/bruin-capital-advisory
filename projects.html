@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accessibility | Bruin Capital Advisory</title>
-  <meta name="description" content="Bruin Capital Advisory's commitment to an accessible website.">
-  <meta property="og:title" content="Accessibility | Bruin Capital Advisory">
-  <meta property="og:description" content="Bruin Capital Advisory's commitment to an accessible website.">
+  <title>Projects | Bruin Capital Advisory</title>
+  <meta name="description" content="Modeling projects, stock pitches, and competition work from Bruin Capital Advisory teams.">
+  <meta property="og:title" content="Projects | Bruin Capital Advisory">
+  <meta property="og:description" content="Modeling projects, stock pitches, and competition work from Bruin Capital Advisory teams.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/logo.png">
   <meta name="theme-color" content="#082c4c">
@@ -28,7 +28,7 @@
       <nav class="nav" id="site-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="reports.html">Reports</a>
-        <a href="projects.html">Projects</a>
+        <a href="projects.html" aria-current="page">Projects</a>
         <a href="recruitment.html">Recruitment</a>
         <a href="team.html">Our Team</a>
       </nav>
@@ -38,25 +38,16 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
-        <h1>Accessibility</h1>
+        <h1>Projects</h1>
+        <p>Modeling work, stock pitches, and competition entries built by BCA teams.</p>
       </div>
     </section>
-    <article class="container legal">
-      <p class="updated">Last updated: October 2, 2026</p>
-
-      <p>Bruin Capital Advisory wants this Site to be usable by everyone. We aim to meet the Web Content Accessibility Guidelines
-        (WCAG) 2.1 Level AA.</p>
-      <h2>What we do</h2>
-      <ul>
-        <li>Use semantic HTML, a skip-to-content link, and visible keyboard focus;</li>
-        <li>Choose color combinations for readable contrast;</li>
-        <li>Respect your device's "reduce motion" setting by stopping the homepage carousel from auto-playing;</li>
-        <li>Make the layout work on phones, tablets, and desktops.</li>
-      </ul>
-      <h2>Feedback</h2>
-      <p>If any part of the Site is hard to use, or you need content in another format, email
-        <a data-email href="#">bruincapitaladvisory@gmail.com</a> and we will do our best to help.</p>
-    </article>
+    <div class="container">
+      <div class="project-list"></div>
+      <p class="empty" hidden>No projects posted yet. Team projects will appear here as they wrap up.</p>
+      <p class="fine-print">Projects are student work produced for educational purposes only and are not
+        investment advice. See our <a href="disclaimer.html">Disclaimer</a>.</p>
+    </div>
   </main>
 
   <footer class="site-footer">
