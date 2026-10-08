@@ -179,7 +179,7 @@
           loading: "lazy",
         }),
         el("h3", {}, m.name),
-        el("p", {}, m.role),
+        m.role && el("p", {}, m.role),
         m.linkedin && el("a", { href: m.linkedin, rel: "noopener", target: "_blank" }, "LinkedIn"))));
     $(".empty").hidden = members.length > 0;
   }

@@ -384,7 +384,12 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -.02em; text-wrap
 .chips li { background: rgba(132, 181, 255, .2); border-radius: 999px; padding: 4px 13px; font-size: .9rem; }
 
 /* ---------- Team ---------- */
-.team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 32px 24px; padding: 8px 0 80px; }
+.team-heading {
+  text-align: center; color: var(--navy); margin: 0 0 26px;
+  font-weight: 800; font-size: clamp(1.8rem, 4.4vw, 2.7rem); letter-spacing: -.03em;
+}
+.team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 24px; padding: 0 0 80px; max-width: 980px; margin: 0 auto; }
+@media (max-width: 760px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; } }
 .member { text-align: center; }
 .member .photo {
   aspect-ratio: 1; width: 100%; border-radius: var(--r-lg);
