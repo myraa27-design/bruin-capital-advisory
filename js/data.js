@@ -10,6 +10,11 @@ window.BCA_CONTACT = {
   linkedin: "https://www.linkedin.com/",
 };
 
+// Group photo shown behind the home page banner. Drop the image in assets/
+// (a wide landscape JPG around 2400px across works best) and put its path here,
+// e.g. "assets/group-photo.jpg". Leave it as "" to keep the plain pastel banner.
+window.BCA_HERO_PHOTO = "";
+
 // Sectors used as filter tabs on the Reports page.
 window.BCA_SECTORS = ["Healthcare", "TMT", "Wealth Management"];
 

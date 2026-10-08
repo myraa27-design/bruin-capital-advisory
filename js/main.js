@@ -49,16 +49,26 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- Roaring logo: plays once on load, then on every click/tap ---- */
+  /* ---- Roaring bear: roars on mouse hover, keyboard focus, or tap ---- */
   const roar = $(".roar");
   if (roar) {
     const play = () => {
       if (reduceMotion || roar.classList.contains("is-roaring")) return;
       roar.classList.add("is-roaring");
-      setTimeout(() => roar.classList.remove("is-roaring"), 1900);
+      setTimeout(() => roar.classList.remove("is-roaring"), 1600);
     };
+    roar.addEventListener("mouseenter", play);
+    roar.addEventListener("focus", play);
     roar.addEventListener("click", play);
-    window.addEventListener("load", () => setTimeout(play, 900));
+  }
+
+  /* ---- Optional group photo behind the home banner ---- */
+  const hero = $(".hero");
+  if (hero && window.BCA_HERO_PHOTO) {
+    // Resolve against the page, not the stylesheet, so a path like "assets/x.jpg" works.
+    const photo = new URL(safeUrl(window.BCA_HERO_PHOTO), document.baseURI).href;
+    hero.style.setProperty("--hero-photo", `url("${photo.replace(/"/g, "%22")}")`);
+    hero.classList.add("has-photo");
   }
 
   /* ---- Footer: year + contact links ---- */
