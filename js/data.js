@@ -50,7 +50,7 @@ window.BCA_PROJECTS = [
 window.BCA_TEAM = [
   { name: "Myra Agrawal", role: "Co-Founder & President", photo: "assets/team/myra.jpg?v=2" },
   { name: "Isaias Plascencia", role: "Co-Founder & President", photo: "assets/team/isaias.jpg" },
-  { name: "Som Chandrashekar", photo: "assets/team/som.jpg" },
-  { name: "Jacob Ralph", photo: "assets/team/jacob.jpg" },
+  { name: "Som Chandrashekar", role: "Internal Vice President", photo: "assets/team/som.jpg" },
+  { name: "Jacob Ralph", role: "External Vice President", photo: "assets/team/jacob.jpg" },
   // Optional per person: role: "Co-President", linkedin: "https://www.linkedin.com/in/..."
 ];
