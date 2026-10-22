@@ -48,8 +48,8 @@ window.BCA_PROJECTS = [
 // in assets/team/ and set `photo` to it. Without `photo`, a "photo coming soon"
 // silhouette is shown. Add `linkedin` to show a LinkedIn link under the name.
 window.BCA_TEAM = [
-  { name: "Myra Agrawal", role: "Co-Founder & President", photo: "assets/team/myra.jpg?v=2" },
-  { name: "Isaias Plascencia", role: "Co-Founder & President", photo: "assets/team/isaias.jpg" },
+  { name: "Myra Agrawal", role: "President", photo: "assets/team/myra.jpg?v=2" },
+  { name: "Isaias Plascencia", role: "President", photo: "assets/team/isaias.jpg" },
   { name: "Som Chandrashekar", role: "Internal Vice President", photo: "assets/team/som.jpg" },
   { name: "Jacob Ralph", role: "External Vice President", photo: "assets/team/jacob.jpg" },
   // Optional per person: role: "Co-President", linkedin: "https://www.linkedin.com/in/..."
