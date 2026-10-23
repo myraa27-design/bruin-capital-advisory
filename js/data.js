@@ -22,6 +22,13 @@ window.BCA_SECTORS = ["Healthcare", "TMT", "Wealth Management"];
 // homepage carousel. `url` can point to a PDF in /reports or a Google Doc.
 // Leave the array empty and the site shows a "coming soon" message instead.
 window.BCA_REPORTS = [
+  {
+    title: "How the Pharmaceutical Industry Changed Over the Last Month: Global Overview",
+    sector: "Healthcare",
+    date: "2026-10-23",
+    summary: "A rundown of the past month in pharma across the US, Europe and China, and why clinical speed now decides who leads.",
+    url: "reports/healthcare-roundup-1.html",
+  },
   // {
   //   title: "Example: Why mid-market private credit keeps growing",
   //   sector: "Healthcare", // must match one of BCA_SECTORS above
