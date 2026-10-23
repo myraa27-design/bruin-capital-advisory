@@ -23,7 +23,7 @@ window.BCA_SECTORS = ["Healthcare", "TMT", "Wealth Management"];
 // Leave the array empty and the site shows a "coming soon" message instead.
 window.BCA_REPORTS = [
   {
-    title: "How the Pharmaceutical Industry Changed Over the Last Month: Global Overview",
+    title: "October 2026: Global Healthcare Roundup",
     sector: "Healthcare",
     date: "2026-10-23",
     summary: "A rundown of the past month in pharma across the US, Europe and China, and why clinical speed now decides who leads.",
