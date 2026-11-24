@@ -23,6 +23,13 @@ window.BCA_SECTORS = ["Healthcare", "TMT", "Wealth Management"];
 // Leave the array empty and the site shows a "coming soon" message instead.
 window.BCA_REPORTS = [
   {
+    title: "November 2026: Tech Roundup",
+    sector: "TMT",
+    date: "2026-11-24",
+    summary: "HealthStream and AI in healthcare training, Walmart and Amazon on AI shopping, Starlink Wi-Fi on easyJet, and whether code is still a moat.",
+    url: "reports/tech-roundup-1.html",
+  },
+  {
     title: "October 2026: Global Healthcare Roundup",
     sector: "Healthcare",
     date: "2026-10-23",

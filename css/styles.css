@@ -463,6 +463,14 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -.02em; text-wrap
 .article li { margin-bottom: .35em; }
 .article li::marker { color: var(--blue); font-weight: 700; }
 .article p.article-note { font-size: .88rem; color: var(--muted); }
+.article-rule + section > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.article-table-wrap { overflow-x: auto; margin: 6px 0 1.4em; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--white); }
+.article table { width: 100%; border-collapse: collapse; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.article th, .article td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+.article tbody tr:last-child th, .article tbody tr:last-child td { border-bottom: 0; }
+.article thead th { background: var(--ice); color: var(--navy); font-family: var(--font-display); font-weight: 700; }
+.article tbody th { font-weight: 600; color: var(--ink); }
+.article td { color: #1d3350; white-space: nowrap; }
 .article-note { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); }
 
 /* ---------- Legal pages ---------- */
